@@ -51,7 +51,7 @@ public class Author {
                 +"\""+this.following_count+"\", "
                 +"\""+this.likes_count+"\", "
                 +"\""+this.location+"\") ";
-
+        query.replaceAll("'","''");
         try {
             m.openStatement();
             Statement stmt = m.getStatement();

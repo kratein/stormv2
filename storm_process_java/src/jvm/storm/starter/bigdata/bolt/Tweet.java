@@ -56,7 +56,7 @@ public class Tweet {
                 +"\""+this.text+"\", "
                 +"\""+this.lang+"\", "
                 +"\""+this.id_location+"\")";
-
+        query.replaceAll("'","''");
         try {
             m.openStatement();
             Statement stmt = m.getStatement();

@@ -130,8 +130,8 @@ public  class TwitterToMysqlBolt extends BaseBasicBolt {
                     +"\""+status.getUser().getProfileBackgroundColor()+ "\", "
                     +"\""+status.getUser().getProfileBackgroundImageURL()+ "\", "
                     +"\""+status.getUser().getProfileImageURL()+ "\") ";
-            this.insertDB(sql.replaceAll("'","''"));
-            collector.emit(new Values(status));*/
+            this.insertDB(sql.replaceAll("'","''"));*/
+            collector.emit(new Values(status));
         }
     }
 
