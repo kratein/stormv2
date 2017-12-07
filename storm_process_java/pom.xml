@@ -98,11 +98,11 @@
       <!-- keep storm out of the jar-with-dependencies -->
         <!--<scope>provided</scope>-->
     </dependency>
-      <dependency>
+      <!--<dependency>
           <groupId>org.apache.storm</groupId>
           <artifactId>multilang-javascript</artifactId>
           <version>${project.version}</version>
-      </dependency>
+      </dependency>-->
       <dependency>
           <groupId>org.apache.storm</groupId>
           <artifactId>multilang-ruby</artifactId>
