@@ -57,7 +57,7 @@ public class Author {
             Statement stmt = m.getStatement();
             stmt.executeUpdate(query);
         } catch (SQLException err) {
-            err.printStackTrace();
+            //err.printStackTrace();
             return false;
         }
         return true;
