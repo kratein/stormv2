@@ -65,15 +65,15 @@ public  class TwitterToMysqlBolt extends BaseBasicBolt {
             if(status.getRetweetedStatus() != null)
                 retweet_id = status.getRetweetedStatus().getId();
 
-            Tweet t = new Tweet(status.getId(), status.getUser().getId(), utc.format(status.getCreatedAt()),
+            /*Tweet t = new Tweet(status.getId(), status.getUser().getId(), utc.format(status.getCreatedAt()),
                     retweet_id, status.getRetweetCount(), status.getSource().replaceAll("\"", "''"),
                     status.getText().replaceAll("\"", "''"), status.getUser().getLang(), Integer.parseInt(placeId));
-            t.save();
-            /*Author a = new Author(status.getUser().getId(), status.getUser().getName(), status.getUser().getScreenName(),
+            t.save();*/
+            Author a = new Author(status.getUser().getId(), status.getUser().getName(), status.getUser().getScreenName(),
                     status.getUser().getLang(), utc.format(status.getUser().getCreatedAt()), status.getUser().getDescription(),
                     status.getUser().getURL(), status.getUser().getFriendsCount(), status.getUser().getStatusesCount(),
                     status.getUser().getFavouritesCount(), status.getUser().getLocation());
-            a.save();*/
+            a.save();
 
                 /*String sql = "INSERT INTO `bigdata`.`raw` (tweet_author_id, tweet_author_name, tweet_author_screen_name, tweet_author_lang, tweet_author_created_at ,"
            +" tweet_author_created_at_str_cet, tweet_author_created_at_str_utc, tweet_author_description,"
