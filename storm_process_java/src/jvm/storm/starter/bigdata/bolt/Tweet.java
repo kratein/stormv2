@@ -16,7 +16,6 @@ public class Tweet {
     private String source;
     private String text;
     private String lang;
-    private int id_location;
 
     public Tweet() {
         this.id = 0;
@@ -27,7 +26,6 @@ public class Tweet {
         this.source = "";
         this.text = "";
         this.lang = "";
-        this.id_location = 0;
     }
 
     public Tweet(long id, long id_author, String created_at_utc, long rt_id_tweet, int rt_count,
