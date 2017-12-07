@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Author {
-    private int id;
+    private long id;
     private String name;
     private String screen_name;
     private String lang;
@@ -21,7 +21,7 @@ public class Author {
 
     public Author(){}
 
-    public Author(int id, String name, String screen_name, String lang, String created_at_utc, String description,
+    public Author(long id, String name, String screen_name, String lang, String created_at_utc, String description,
                   String url, int following_count, int statuses_count, int likes_count, String location){
         this.id = id;
         this.name = name;
@@ -40,9 +40,9 @@ public class Author {
         Model m = Model.getInstance();
 
         String query = "INSERT INTO author (id, name, screen_name, lang, created_at_utc, description, url, statuses_count, " +
-                "following_count, likes_count, location) VALUES ('"+this.id+"', " +"'"+this.name+"' ,'"
+                "following_count, likes_count, location) VALUES ("+this.id+", " +"'"+this.name+"' ,'"
                 +this.screen_name+"', '"+this.lang+"', '"+this.created_at_utc+"', '"+this.description+"', '"+
-                this.url+"', '"+this.statuses_count+"','"+this.following_count+"', '"+this.likes_count+"', '"+this.location+"')";
+                this.url+"', "+this.statuses_count+","+this.following_count+", "+this.likes_count+", '"+this.location+"')";
 
         try {
             m.openStatement();
