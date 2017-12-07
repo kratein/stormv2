@@ -31,7 +31,7 @@ public class Tweet {
     }
 
     public Tweet(long id, long id_author, String created_at_utc, long rt_id_tweet, int rt_count,
-                 String source, String text, String lang, int id_location) {
+                 String source, String text, String lang) {
         this.id = id;
         this.id_author = id_author;
         this.created_at_utc = created_at_utc;
@@ -40,13 +40,12 @@ public class Tweet {
         this.source = source;
         this.text = text;
         this.lang = lang;
-        this.id_location = id_location;
     }
 
     public boolean save() {
         Model m = Model.getInstance();
 
-        String query = "INSERT INTO tweet (id, id_author, created_at_utc, rt_id_tweet, rt_count, source, text, lang, id_location)" +
+        String query = "INSERT INTO tweet (id, id_author, created_at_utc, rt_id_tweet, rt_count, source, text, lang)" +
                 " VALUES (\""+this.id+"\", "
                 +"\""+this.id_author+"\", "
                 +"\""+this.created_at_utc+"\", "
@@ -54,8 +53,7 @@ public class Tweet {
                 +"\""+this.rt_count+"\", "
                 +"\""+this.source+"\", "
                 +"\""+this.text+"\", "
-                +"\""+this.lang+"\", "
-                +"\""+this.id_location+"\")";
+                +"\""+this.lang+"\")";
         query.replaceAll("'","''");
         try {
             m.openStatement();
