@@ -66,8 +66,8 @@ public  class TwitterToMysqlBolt extends BaseBasicBolt {
                 retweet_id = status.getRetweetedStatus().getId();
 
             Tweet t = new Tweet(status.getId(), status.getUser().getId(), utc.format(status.getCreatedAt()),
-                    retweet_id, status.getRetweetCount(), "source de merde",
-                    "texte de merde", status.getUser().getLang(), Integer.parseInt(placeId));
+                    retweet_id, status.getRetweetCount(), status.getSource().replaceAll("\"", "''"),
+                    status.getText().replaceAll("\"", "''"), status.getUser().getLang(), Integer.parseInt(placeId));
             t.save();
             Author a = new Author(status.getUser().getId(), status.getUser().getName(), status.getUser().getScreenName(),
                     status.getUser().getLang(), utc.format(status.getUser().getCreatedAt()), status.getUser().getDescription(),

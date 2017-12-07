@@ -40,9 +40,17 @@ public class Author {
         Model m = Model.getInstance();
 
         String query = "INSERT INTO author (id, name, screen_name, lang, created_at_utc, description, url, statuses_count, " +
-                "following_count, likes_count, location) VALUES ("+this.id+", " +"'"+this.name+"' ,'"
-                +this.screen_name+"', '"+this.lang+"', '"+this.created_at_utc+"', '"+this.description+"', '"+
-                this.url+"', "+this.statuses_count+","+this.following_count+", "+this.likes_count+", '"+this.location+"')";
+                "following_count, likes_count, location) VALUES (\""+this.id+"\", "
+                +"\""+this.name+"\", "
+                +"\""+this.screen_name+"\", "
+                +"\""+this.lang+"\", "
+                +"\""+this.created_at_utc+"\", "
+                +"\""+this.description+"\", "
+                +"\""+this.url+"\", "
+                +"\""+this.statuses_count+"\", "
+                +"\""+this.following_count+"\", "
+                +"\""+this.likes_count+"\", "
+                +"\""+this.location+"\") ";
 
         try {
             m.openStatement();

@@ -47,8 +47,15 @@ public class Tweet {
         Model m = Model.getInstance();
 
         String query = "INSERT INTO tweet (id, id_author, created_at_utc, rt_id_tweet, rt_count, source, text, lang, id_location)" +
-                " VALUES ("+this.id+","+this.id_author+",'"+this.created_at_utc+"',"+this.rt_id_tweet+
-                ","+this.rt_count+", '"+this.source+"', '"+this.text+"', '"+this.lang+"', "+this.id_location+")";
+                " VALUES (\""+this.id+"\", "
+                +"\""+this.id_author+"\", "
+                +"\""+this.created_at_utc+"\", "
+                +"\""+this.rt_id_tweet+"\", "
+                +"\""+this.rt_count+"\", "
+                +"\""+this.source+"\", "
+                +"\""+this.text+"\", "
+                +"\""+this.lang+"\", "
+                +"\""+this.id_location+"\")";
 
         try {
             m.openStatement();
