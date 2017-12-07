@@ -16,8 +16,8 @@ import java.util.Properties;
 
 
             try {
-//                input = new FileInputStream("/home/bonin_d/stormv2/config.properties");
-                input = new FileInputStream("C:/tmp/config.properties");
+                input = new FileInputStream("/home/bonin_d/stormv2/config.properties");
+//                input = new FileInputStream("C:/tmp/config.properties");
 
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
